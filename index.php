@@ -2,6 +2,20 @@
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Главная');
 ?>
+
+<?$APPLICATION->IncludeComponent(
+    "sp:main.block",
+    ".default",
+    Array(
+        "COMPONENT_TEMPLATE" => ".default",
+        "LINK_MAIN_BLOCK" => "/project/",
+        "SUBTEXT_MAIN_BLOCK" => "Создаём и продвигаем сайты для бизнеса",
+        "TEXT_LINK_MAIN_BLOCK" => "Обсудить проект",
+        "TITLE_MAIN_BLOCK" => "Мы покоряем любые вершины!"
+    )
+);?>
+
+
     <section class="main-section section">
         <div class="main-section_bg" data-parallaxify-range-x="100" data-parallaxify-range-y="100"><div class="main-section_bg-inner" data-depth="0.6"></div></div>
         <div class="section-inner main_section-inner">
@@ -238,6 +252,8 @@ $APPLICATION->SetTitle('Главная');
             </div>
         </div>
     </div>
+
+
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
     "about_us",
@@ -303,14 +319,11 @@ $APPLICATION->SetTitle('Главная');
     )
 );?>
 
-
 <? $APPLICATION->IncludeComponent("bitrix:main.include", "", array(
         "PATH" => SITE_TEMPLATE_PATH . "/include/index/background.php",
         'AREA_FILE_SHOW' => 'file'
     )
 ); ?>
-
-
 
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
@@ -373,7 +386,6 @@ $APPLICATION->SetTitle('Главная');
         "TITLE_BLOCK" => "принципы",
     )
 );?>
-
 
 <?$APPLICATION->IncludeComponent(
     "bitrix:news.list",
