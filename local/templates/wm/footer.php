@@ -6,7 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 ?>
 
-
+<?if(ERROR_404 != 'Y'):?>
 </main>
 <!-- end main-content -->
 <footer class="main-footer">
@@ -86,6 +86,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         );?>
     </div>
 </footer>
+<?endif;?>
 <!-- end main-footer -->
 <div class="scroll-to-top"></div>
 </div>

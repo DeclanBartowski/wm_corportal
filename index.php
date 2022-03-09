@@ -185,7 +185,7 @@ $APPLICATION->IncludeComponent(
         "PAGER_SHOW_ALWAYS" => "N",
         "PAGER_TEMPLATE" => ".default",
         "PAGER_TITLE" => "Новости",
-        "PARENT_SECTION" => "",
+        "PARENT_SECTION" => "5",
         "PARENT_SECTION_CODE" => "",
         "PREVIEW_TEXT" => "клиенты",
         "PREVIEW_TRUNCATE_LEN" => "",

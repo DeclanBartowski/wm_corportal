@@ -10,5 +10,10 @@ $arTemplateParameters = array(
         "NAME" => GetMessage("SUBTITLE_BLOCK"),
         "TYPE" => "STRING",
     ),
+    "ABOUT_PAGE" => Array(
+        "NAME" => GetMessage("ABOUT_PAGE"),
+        "TYPE" => "CHECKBOX",
+        'DEFAULT' => 'N'
+    ),
 );
 ?>

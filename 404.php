@@ -7,14 +7,18 @@ CHTTP::SetStatus("404 Not Found");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 $APPLICATION->SetTitle("404 Not Found");
+?>
 
-$APPLICATION->IncludeComponent("bitrix:main.map", ".default", Array(
-	"LEVEL"	=>	"3",
-	"COL_NUM"	=>	"2",
-	"SHOW_DESCRIPTION"	=>	"Y",
-	"SET_TITLE"	=>	"Y",
-	"CACHE_TIME"	=>	"36000000"
-	)
-);
+    <div class="error-section">
+        <div class="container">
+            <div class="error-number"></div>
+            <div class="section-title">Ошибка</div>
+            <p>Извините, такой страницы нет</p>
+            <a href="/" class="red-btn">
+                <span class="red-btn_inner"><span class="red-btn_icon"></span>Перейти на главную</span>
+            </a>
+        </div>
+    </div>
 
+<?php
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

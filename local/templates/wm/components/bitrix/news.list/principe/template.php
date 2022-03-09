@@ -14,7 +14,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="principles-section white-section section">
+<div class="principles-section white-section section" id="principles_about">
     <div class="container">
         <span class="unified-section_subtitle fadeInUp wow" data-wow-duration=".8s"
               data-wow-delay=".2s"><?= $arParams['TITLE_BLOCK'] ?></span>
@@ -44,12 +44,14 @@ $this->setFrameMode(true);
                     </div>
                 <? endforeach; ?>
             </div>
+            <?if($arParams['ABOUT_PAGE'] != 'Y'):?>
             <div class="text-center fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".6s">
                 <a href="<?= $arResult["LIST_PAGE_URL"] ?>" class="black-btn">
                     <span class="black-btn_inner"><span
                                 class="black-btn_icon"></span><?= GetMessage('LINK_NAME') ?></span>
                 </a>
             </div>
+            <?endif;?>
         </div>
     </div>
 </div>

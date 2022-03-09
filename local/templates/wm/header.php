@@ -52,6 +52,8 @@ $APPLICATION->ShowPanel();
             <span class="loader-text">digital-агенство</span>
         </div>
     </div>
+
+ <?if(ERROR_404 != 'Y'):?>
     <div class="callback-content callback-content_fixed">
         <div class="callback-content_header">
             <span class="callback-content_close-btn"></span>
@@ -79,7 +81,7 @@ $APPLICATION->ShowPanel();
     <header class="ui-header">
         <div class="container">
             <div class="head-logo">
-                <a href="">
+                <a href="/">
                     <img data-src="<?= SITE_TEMPLATE_PATH ?>/img/static/logo.svg" class="head_first-img" alt="alt">
                     <img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo-icon.svg" class="head_second-img" alt="alt">
                 </a>
@@ -189,12 +191,6 @@ $APPLICATION->ShowPanel();
                                     "STRICT_SECTION_CHECK" => "N"
                                 )
                             ); ?>
-
-                            <ul class="social-network dropdown_social-network">
-                                <li><a href="">Telegram</a></li>
-                                <li><a href="">WhatsApp</a></li>
-                                <li><a href="">Viber</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -202,3 +198,4 @@ $APPLICATION->ShowPanel();
         </div>
     </header>
     <main class="main-content">
+<?endif;?>
