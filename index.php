@@ -238,55 +238,70 @@ $APPLICATION->SetTitle('Главная');
             </div>
         </div>
     </div>
-    <!-- end case-section -->
-    <div class="advantages-section white-section section">
-        <div class="container">
-            <div class="row advantages-section_header">
-                <div class="col-md-5">
-                    <span class="unified-section_subtitle fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".2s">немного о нас</span>
-                    <div class="section-title fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".4s">Команда - <span class="min">это важно!</span></div>
-                </div>
-                <div class="col-md-7">
-                    <div class="advantages-section_text fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".4s">
-                        <p>
-                            Мы-небольшая, но мощная команда создателей крутых сайтов, по-настоящему любящая свою работу.Мы начинаем каждый день с новых идей, помогаем друг другу расти и учиться друг у друга.Каждый проект должен быть усовершенствован до такой степени, что позволяет нам поддерживать репутацию надежного партнера и поднимать планку наших амбиций все выше и выше
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <ul class="advantages-box">
-                <li class="advantage-item fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".2s">
-                    <div class="advantage-item_content">
-                        <span class="advantage-item_number">7 лет</span>
-                        <span class="text">Опыта в разработке сайтов</span>
-                    </div>
-                </li>
-                <li class="advantage-item fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".4s">
-                    <div class="advantage-item_content">
-                        <span class="advantage-item_number">200+</span>
-                        <span class="text">Индивидуальных проектов</span>
-                    </div>
-                </li>
-                <li class="advantage-item fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".6s">
-                    <div class="advantage-item_content">
-                        <span class="advantage-item_number">1000+</span>
-                        <span class="text">Запросов в ТОП 5</span>
-                    </div>
-                </li>
-                <li class="advantage-item fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".8s">
-                    <div class="advantage-item_content">
-                        <span class="advantage-item_number">1500+</span>
-                        <span class="text">Выпито чашек кофе</span>
-                    </div>
-                </li>
-            </ul>
-            <div class="text-center fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".4s">
-                <a href="" class="black-btn">
-                    <span class="black-btn_inner"><span class="black-btn_icon"></span>О компании</span>
-                </a>
-            </div>
-        </div>
-    </div>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "about_us",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "BEFORE_TITLE" => "немного о нас",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "CLASS_UL" => "Y",
+        "COMPONENT_TEMPLATE" => "about_us",
+        "DESCRIPTION_ABOUT" => "Мы-небольшая, но мощная команда создателей крутых сайтов, по-настоящему любящая свою работу.Мы начинаем каждый день с новых идей, помогаем друг другу расти и учиться друг у друга.Каждый проект должен быть усовершенствован до такой степени, что позволяет нам поддерживать репутацию надежного партнера и поднимать планку наших амбиций все выше и выше",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_DATE" => "N",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "N",
+        "DISPLAY_PREVIEW_TEXT" => "N",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(0=>"",1=>"",),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "4",
+        "IBLOCK_TYPE" => "content",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Новости",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TEXT" => "клиенты",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(0=>"",1=>"",),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "ID",
+        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N",
+        "TITLE_ABOUT" => "Команда - ",
+        "TITLE_SPAN_ABOUT" => "это важно!"
+    )
+);?>
 
 
 <? $APPLICATION->IncludeComponent("bitrix:main.include", "", array(
