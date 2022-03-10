@@ -8,25 +8,20 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 <?if(ERROR_404 != 'Y'):?>
 </main>
-<!-- end main-content -->
 <footer class="main-footer">
     <div class="container">
-        <div class="main-footer_content">
-            <span class="unified-section_subtitle">Давайте Начнем уже сейчас !</span>
-            <div class="main-footer_title-row">
-                <div class="section-title">
-                    Расскажите о вашем <span class="min">проекте</span>
-                </div>
-                <a href="" class="red-btn">
-                    <span class="red-btn_inner"><span class="red-btn_icon"></span>Заполнить бриф</span>
-                </a>
-            </div>
-            <ul class="main-footer_contact">
-                <li><a href="tel:+74012400512" class="phone-number">+7 (4012) 400-512</a></li>
-                <li>г. Калининград, Парковый переулок,7, <br>корпус 1, офис 2</li>
-                <li><a href="mailto:Info@webmedia39.ru" class="footer-email">Info@webmedia39.ru</a></li>
-            </ul>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "sp:footer.block",
+            ".default",
+            Array(
+                "COMPONENT_TEMPLATE" => ".default",
+                "LINK_MAIN_BLOCK" => "/brief/",
+                "SUBTEXT_MAIN_BLOCK" => "Расскажите о вашем ",
+                "SUBTEXT_MAIN_BLOCK_SPAN" => "проекте",
+                "TEXT_LINK_MAIN_BLOCK" => "Заполнить бриф",
+                "TITLE_MAIN_BLOCK" => "Давайте Начнем уже сейчас !"
+            )
+        );?>
         <?$APPLICATION->IncludeComponent(
             "bitrix:news.list",
             "social",

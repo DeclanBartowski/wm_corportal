@@ -49,88 +49,90 @@ $APPLICATION->ShowPanel();
             <div class="logo-loader"></div>
         </div>
         <div class="wrapper_loader-text">
-            <span class="loader-text">digital-агенство</span>
+            <span class="loader-text">
+                <? $APPLICATION->IncludeComponent("bitrix:main.include", "", array(
+                        "PATH" => SITE_TEMPLATE_PATH . "/include/header/digital.php",
+                        'AREA_FILE_SHOW' => 'file'
+                    )
+                ); ?>
+            </span>
         </div>
     </div>
 
  <?if(ERROR_404 != 'Y'):?>
-    <div class="callback-content callback-content_fixed">
+    <div class="callback-content callback-content_mod callback-content_fixed">
         <div class="callback-content_header">
             <span class="callback-content_close-btn"></span>
         </div>
-        <div class="section-title">Обсудить проект</div>
-        <form action="#" class="callback-form">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Имя">
-            </div>
-            <div class="form-group">
-                <input type="tel" class="form-control" placeholder="Телефон">
-            </div>
-            <div class="form-group">
-                <textarea class="form-control form-textarea" placeholder="Сообщение"></textarea>
-            </div>
-            <div class="wrapper_callback-form_submit red-btn red-btn_mod">
-                <input type="submit" class="callback-form_submit-btn" value="Отправить">
-                <span class="red-btn_icon"></span>
-            </div>
-            <div class="form-policy">Нажимая на кнопку, вы даете согласие на обработку персональных данных и
-                соглашаетесь с политикой конфиденциальности
-            </div>
-        </form>
+
+        <?$APPLICATION->IncludeComponent(
+            "sp:main.feedback",
+            "modal",
+            Array(
+                "AJAX_MODE" => "Y",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "N",
+                "COMPONENT_TEMPLATE" => "modal",
+                "EMAIL_TO" => "admin@admin.admin",
+                "EVENT_MESSAGE_ID" => array(0=>"12",),
+                "FILE_SEND" => "N",
+                "INFOBLOCKADD" => "Y",
+                "INFOBLOCKID" => "12",
+                "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+                "REQUIRED_FIELDS" => array(0=>"NONE",),
+                "USE_CAPTCHA" => "N"
+            )
+        );?>
+
+
     </div>
     <header class="ui-header">
-        <div class="container">
-            <div class="head-logo">
-                <a href="/">
-                    <img data-src="<?= SITE_TEMPLATE_PATH ?>/img/static/logo.svg" class="head_first-img" alt="alt">
-                    <img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/logo-icon.svg" class="head_second-img" alt="alt">
-                </a>
-            </div>
-            <div class="head_center-column">
-                <div class="hamburger hamburger--spring">
-                    <div class="hamburger-box">
-                        <div class="hamburger-inner"></div>
-                    </div>
-                </div>
-                <a href="" class="head_projects-btn">Проекты</a>
-            </div>
-            <a href="tel:+74012400512" class="head_phone-number">+7 (4012) 400-512</a>
-        </div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "menu_header",
+                Array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "COMPONENT_TEMPLATE" => "menu_header",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "1",
+                    "MENU_CACHE_GET_VARS" => array(),
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "header_visible",
+                    "USE_EXT" => "N"
+                )
+            );?>
         <div class="dropdown-box">
             <div class="container">
-                <div class="dropdown-box_header">
-                    <a href="" class="dropdown-box_discuss-project js_discuss-project_2 ">Обсудить проект</a>
-                </div>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href=""><span class="menu-number">01</span><span class="menu-text">Проекты</span></a>
-                    </li>
-                    <li>
-                        <a href=""><span class="menu-number">02</span><span class="menu-text">Услуги</span></a>
-                        <ul class="dropdown-submenu">
-                            <li><a href="">Разработка сайтов</a></li>
-                            <li><a href="">Продвижение и реклама</a></li>
-                            <li><a href="">Автоматизация</a></li>
-                            <li><a href="">Обслуживание и развитие</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href=""><span class="menu-number">03</span><span class="menu-text">О нас</span></a>
-                    </li>
-                    <li>
-                        <a href=""><span class="menu-number">04</span><span class="menu-text">Контакты</span></a>
-                    </li>
-                </ul>
-                <div class="tablet-small_visible">
-                    <a href="" class="red-btn js_discuss-project_2">
-                        <span class="red-btn_inner"><span class="red-btn_icon"></span>Обсудить проект</span>
-                    </a>
-                </div>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "multilvl_menu",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "COMPONENT_TEMPLATE" => "vertical_multilevel",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "2",
+                        "MENU_CACHE_GET_VARS" => "",
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "modal_menu",
+                        "USE_EXT" => "Y"
+                    )
+                );?>
                 <div class="dropdown-box_footer">
                     <div class="row">
                         <div class="col-md-5 right-column order-md-2">
-                            <a href="tel:+74012400512" class="dropdown_phone-number">+7 (4012) 400-512</a> <br>
-                            <a href="mailto:Info@webmedia39.ru" class="dropdown-email">Info@webmedia39.ru</a>
+                            <?$APPLICATION->IncludeComponent(
+                                "sp:header.block",
+                                ".default",
+                                []
+                            );?>
                         </div>
                         <div class="col-md-7">
                             <? $APPLICATION->IncludeComponent(

@@ -293,41 +293,46 @@ function lazyLoad($content) {
 			}
 		});
 	}
-if ($('.map-container').length) {
-	YaMapsShown = false;
-	$(window).on("scroll load resize", function() {
-		if (!YaMapsShown) {
-			if ($(window).scrollTop() + $(window).height() > $('.map-container').offset().top - 500) {
-				showYaMaps();
-				YaMapsShown = true;
-			}
-		}
-	});
-	function showYaMaps() {
-		var script = document.createElement("script");
-		script.type = "text/javascript";
-		script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
-		document.getElementById("map").appendChild(script);
-		script.onload = function() {
-			ymaps.ready(init);
-			var myMap,
-				myPlacemark;
 
-			function init() {
-				myMap = new ymaps.Map("map", {
-					center: [55.74396806900603, 37.561625499999984],
-					zoom: 16,
-					behaviors: ['default', 'scrollZoom'],
-				});
-				myMap.behaviors.disable('scrollZoom');
-				myMap.geoObjects.add(new ymaps.Placemark([55.74396806900603, 37.561625499999984], {
-					balloonContent: 'г.Калининград, Парковый <br />переулок,7, корпус 1, офис 2',
-				}, {
-					iconLayout: 'default#image',
-					iconImageHref: 'img/icons/marker.svg',
-					iconImageSize: [49, 49],
-				}));
-			}
-		}
-	}
-}
+$(document).ready(function (){
+
+    if ($('.map-container').length) {
+        YaMapsShown = false;
+        $(window).on("scroll load resize", function() {
+            if (!YaMapsShown) {
+                if ($(window).scrollTop() + $(window).height() > $('.map-container').offset().top - 500) {
+                    showYaMaps();
+                    YaMapsShown = true;
+                }
+            }
+        });
+        function showYaMaps() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
+            document.getElementById("map").appendChild(script);
+            script.onload = function() {
+                ymaps.ready(init);
+                var myMap,
+                    myPlacemark;
+
+                function init() {
+                    myMap = new ymaps.Map("map", {
+                        center: [55.74396806900603, 37.561625499999984],
+                        zoom: 16,
+                        behaviors: ['default', 'scrollZoom'],
+                    });
+                    myMap.behaviors.disable('scrollZoom');
+                    myMap.geoObjects.add(new ymaps.Placemark([55.74396806900603, 37.561625499999984], {
+                        balloonContent: 'г.Калининград, Парковый <br />переулок,7, корпус 1, офис 2',
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: '/local/templates/wm/img/icons/marker.svg',
+                        iconImageSize: [49, 49],
+                    }));
+                }
+            }
+        }
+    }
+
+})

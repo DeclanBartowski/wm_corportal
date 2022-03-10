@@ -1,0 +1,6 @@
+<?
+$sSectionName = "case";
+$arDirProperties = Array(
+
+);
+?>
