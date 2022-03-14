@@ -13,14 +13,27 @@ if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
 
 <?if(!empty($arResult["ERROR_MESSAGE"]))
 {
-	foreach($arResult["ERROR_MESSAGE"] as $v)
-		ShowError($v);
+    ?>
+
+    <script>
+        $.fancybox.open($('#letter-2'));
+    </script>
+    <?php
 }
 if(strlen($arResult["OK_MESSAGE"]) > 0)
 {
-	?>
+    ?>
     <script>
-        alert('<?=$arResult['OK_MESSAGE']?>');
+        $.fancybox.open($('#letter'));
+        $('input[type="tel"]').inputmask("+7 (999) 999 99 99", {
+            "clearIncomplete": true,
+            showMaskOnHover: false,
+        });
+        $('.form-mod_control').each(function(i) {
+            $(this).val('');
+        });
+        $('.form-group').removeClass('focus');
+        lazyLoad($('body'));
     </script>
     <?
 }

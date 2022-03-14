@@ -24,6 +24,7 @@ use Bitrix\Main\Page\Asset;
 
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/min.css');
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/main.css');
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/custom.css');
 
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/min.js');
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/main.js');

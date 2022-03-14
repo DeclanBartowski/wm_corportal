@@ -223,6 +223,14 @@ JCSmartFilter.prototype.postHandler = function (result, fromCache)
 
 				if (result.SEF_SET_FILTER_URL)
 				{
+                    $.ajax({
+                        type: "GET",
+                        url: result.SEF_SET_FILTER_URL,
+                        timeout: 3000,
+                        success: function(data) {
+                           $('.ajaxUpdate').html($(data).find('.ajaxUpdate').html());
+                        }
+                    });
 					this.bindUrlToButton('set_filter', result.SEF_SET_FILTER_URL);
 				}
 			}

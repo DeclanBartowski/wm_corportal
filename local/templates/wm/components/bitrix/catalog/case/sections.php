@@ -13,7 +13,19 @@
 /** @var CBitrixComponent $component */
 
 $this->setFrameMode(true);
-/*
+
+?>
+
+    <section class="projects-section">
+        <div class="container">
+            <h1 class="fadeInLeft wow" data-wow-duration=".8s" data-wow-delay=".8s">Проекты</h1>
+
+
+
+
+<?php
+
+
 $APPLICATION->IncludeComponent(
     "bitrix:catalog.smart.filter",
     "",
@@ -43,49 +55,7 @@ $APPLICATION->IncludeComponent(
     ),
     $component,
     array('HIDE_ICONS' => 'N')
-);*/
-?>
-
-    <section class="projects-section">
-        <div class="container">
-            <h1 class="fadeInLeft wow" data-wow-duration=".8s" data-wow-delay=".8s">Проекты</h1>
-            <ul class="projects-filter fadeInUp wow" data-wow-duration=".8s" data-wow-delay=".8s">
-                <li class="project-filter_item">
-                    <div class="project-filter_item-title">
-                        <span class="item-number">10</span><span class="text">Отрасли</span>
-                    </div>
-                    <div class="wrapper_projects-filter_menu">
-                        <ul class="projects-filter_menu">
-                            <li><a href=""><span class="item-number">06</span><span class="text">Промышленность</span></a></li>
-                            <li><a href=""><span class="item-number">03</span><span class="text">Металлургия</span></a></li>
-                            <li><a href=""><span class="item-number">02</span><span class="text">Строительство и недвижимость</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Транспорт и логистика</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Медицина</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Бьюти</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Оборудование</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Retail</span></a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="project-filter_item">
-                    <div class="project-filter_item-title">
-                        <span class="item-number">05</span><span class="text">Типы сайтов</span>
-                    </div>
-                    <div class="wrapper_projects-filter_menu">
-                        <ul class="projects-filter_menu">
-                            <li><a href=""><span class="item-number">06</span><span class="text">Интернет магазины</span></a></li>
-                            <li><a href=""><span class="item-number">03</span><span class="text">Каталог</span></a></li>
-                            <li><a href=""><span class="item-number">02</span><span class="text">Корпоративные</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Лэндинги</span></a></li>
-                            <li><a href=""><span class="item-number">06</span><span class="text">Порталы</span></a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
-
-
-<?php
+);
 
 
 

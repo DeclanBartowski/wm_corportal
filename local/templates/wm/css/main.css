@@ -5398,3 +5398,130 @@ button.close:before {
     height: 65%;
   }
 }
+
+/**new code**/
+.letter-popup {
+  display: none;
+  max-width: 408px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 3em;
+}
+
+.popup-icon {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #000;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.popup-icon:before {
+  content: '';
+  display: block;
+  height: 30px;
+  width: 20px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  position: absolute;
+  top: 0;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(45deg);
+}
+
+.popup-icon_mod {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid red;
+  margin-bottom: 1em;
+  transform: rotate(45deg);
+}
+
+.popup-icon_mod:after, .popup-icon_mod:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: red;
+  transition: background .3s;
+}
+
+.popup-icon_mod:after {
+  width: 80%;
+  height: 2px;
+}
+
+.popup-icon_mod:before {
+  height: 80%;
+  width: 2px;
+}
+
+.popup-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.letter-popup .fancybox-close-small {
+  width: 55px;
+  height: 55px;
+}
+
+.letter-popup .fancybox-close-small:focus {
+  outline: none !important;
+}
+
+@media only screen and (max-width: 575px) {
+  .letter-popup {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 2em;
+  }
+}
+
+/**new code**/
+.wrapper_projects-filter_menu:before {
+  z-index: -1;
+}
+
+.unified-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.unified-checkbox input[type="checkbox"] {
+  position: absolute;
+  margin-left: -20px;
+  display: none;
+}
+
+.unified-checkbox input[type="checkbox"]:checked ~ .text:after {
+  width: 100%;
+}
+
+.unified-radio {
+  cursor: pointer;
+}
+
+.unified-radio input[type="radio"] {
+  position: absolute;
+  margin-left: -20px;
+  display: none;
+}
+
+.unified-radio input[type="radio"]:checked ~ .text:after {
+  width: 100%;
+}

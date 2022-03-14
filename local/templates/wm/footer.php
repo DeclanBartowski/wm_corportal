@@ -82,6 +82,21 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     </div>
 </footer>
 <?endif;?>
+
+
+<div class="letter-popup" id="letter">
+    <div class="text-center">
+        <div class="popup-icon"></div>
+    </div>
+    <div class="popup-title">Ваш запрос отправлен!</div>
+</div>
+<!-- end letter -->
+<div class="letter-popup" id="letter-2">
+    <div class="text-center">
+        <div class="popup-icon_mod"></div>
+    </div>
+    <div class="popup-title">Ошибка отправки данных</div>
+</div>
 <!-- end main-footer -->
 <div class="scroll-to-top"></div>
 </div>
